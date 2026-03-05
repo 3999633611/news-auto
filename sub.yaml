@@ -1,0 +1,29 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+
+proxies:
+  - name: 233boy-reality
+    type: vless
+    server: 45.202.241.98
+    port: 21528
+    uuid: 6e24a474-05a0-4b77-993e-7d1e5dd34af8
+    network: tcp
+    tls: true
+    udp: true
+    flow: xtls-rprx-vision
+    servername: www.amazon.com
+    reality-opts:
+      public-key: d8bIhRiIIXqNIPd4mvn6vXqOGyEIV5_bFfo-OVy80QA
+      short-id: ""
+    client-fingerprint: chrome
+
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - 233boy-reality
+
+rules:
+  - MATCH,🚀 节点选择
